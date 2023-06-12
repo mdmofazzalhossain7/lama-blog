@@ -47,9 +47,12 @@ export default function Navbar() {
             );
           })}
 
-          <button className="uppercase font-semibold text-xs px-4 py-2 bg-green-600 text-white rounded-md shadow-sm">
+          <Link
+            href="/dashboard/login"
+            className="uppercase font-semibold text-xs px-4 py-2 bg-green-600 text-white rounded-md shadow-sm"
+          >
             Log in
-          </button>
+          </Link>
         </div>
       </div>
     </div>
