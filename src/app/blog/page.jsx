@@ -2,20 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch("http://localhost:3000/api/posts");
 
-  if (!res.ok) throw new Error("Failed to fetch data");
+  if (!res.ok) throw new Error("Failed to fetch");
 
-  return res.json();
+  return res;
 }
 
 export default async function Blog() {
   const data = await getData();
 
+  console.log(data);
+
   return (
     <div className="">
       <div className="max-w-5xl mx-auto flex flex-col gap-y-4 my-4">
-        {data.map((item) => {
+        {/* {data.map((item) => {
           return (
             <Link
               key={item.id}
@@ -35,7 +37,7 @@ export default async function Blog() {
               </header>
             </Link>
           );
-        })}
+        })} */}
       </div>
     </div>
   );

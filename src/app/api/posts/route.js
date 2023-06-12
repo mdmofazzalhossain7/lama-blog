@@ -6,9 +6,9 @@ export const GET = async (request) => {
   try {
     await connect();
 
-    const post = await Post.find();
+    const posts = await Post.find();
 
-    return new NextResponse(post);
+    return new NextResponse(posts, { status: 200 });
   } catch (error) {
     return new NextResponse("Database Error!", { status: 500 });
   }
