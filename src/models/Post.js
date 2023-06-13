@@ -10,7 +10,7 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
-    article: {
+    content: {
       type: String,
       required: true,
     },
@@ -18,7 +18,9 @@ const postSchema = new Schema(
       type: String,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
 export const Post = models.Post || model("Post", postSchema);
